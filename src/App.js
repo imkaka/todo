@@ -10,11 +10,11 @@ function App() {
   const [personalTasks, setPersonalTasks] = useState([
     {
       title: "Exercise daily",
-      is_completed: false,
+      isCompleted: false,
     },
     {
       title: "Drink Water daily",
-      is_completed: true,
+      isCompleted: true,
     },
   ]);
 
@@ -33,6 +33,8 @@ function App() {
 
   const handleDelete = (task, taskType) => {
     const [currentTasks, setTasks] = getTasks(taskType);
+    const newTasks = currentTasks.filter((t) => t !== task);
+    setTasks(newTasks);
   };
 
   const handleAdd = (title, taskType) => {
@@ -45,24 +47,48 @@ function App() {
 
     const newTask = {
       title,
-      is_completed: false,
+      isCompleted: false,
     };
     const newTasks = [...currentTasks, newTask];
     setTasks(newTasks);
   };
 
   const handleComplete = (task, taskType) => {
-    // let currentTasks = getTasks(taskType);
-    console.log(task, taskType);
+    const [currentTasks, setTasks] = getTasks(taskType);
+
+    const taskIndex = currentTasks.indexOf(task);
+    let completedTask = currentTasks[taskIndex];
+
+    let newTasks = [...currentTasks];
+    completedTask.isCompleted = true;
+    newTasks[taskIndex] = completedTask;
+
+    setTasks(newTasks);
+  };
+
+  const getPendingTaskCount = () => {
+    const pendingFamilyTasksCount = familyTasks.filter(
+      (t) => t.isCompleted === false
+    ).length;
+
+    const pendingPersonalTasksCount = personalTasks.filter(
+      (t) => t.isCompleted === false
+    ).length;
+
+    const pendingWorkTasksCount = workTasks.filter(
+      (t) => t.isCompleted === false
+    ).length;
+
+    return (
+      pendingFamilyTasksCount +
+      pendingPersonalTasksCount +
+      pendingWorkTasksCount
+    );
   };
 
   return (
     <div className="app">
-      <TodoHeader
-        totalTasks={
-          personalTasks.length + familyTasks.length + workTasks.length
-        }
-      />
+      <TodoHeader totalTasks={getPendingTaskCount()} />
       <TodoTask
         tasks={personalTasks}
         taskType={TaskType.personal}

@@ -8,6 +8,11 @@ export default function TodoForm({ onAdd, taskType }) {
   };
   return (
     <form
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
       onSubmit={(e) => {
         e.preventDefault();
         onAdd(title, taskType);
