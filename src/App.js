@@ -5,6 +5,7 @@ import TodoTask from "./components/TodoTask";
 import TodoHeader from "./components/TodoHeader";
 
 import { TaskType } from "./constants/TodoConstants";
+import Home from './containers/Home';
 
 function App() {
   const [personalTasks, setPersonalTasks] = useState([
@@ -87,15 +88,26 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <TodoHeader totalTasks={getPendingTaskCount()} />
+    <div className="App">
+      <div className="side-container">
+        <div></div>
+        <div className="main-screen">
+          <Home />
+        </div>
+        <div></div>
+      </div>
+      {/* <div className="side-container">
+        <div></div>
+        <div></div>
+      </div> */}
+      {/* <TodoHeader totalTasks={getPendingTaskCount()} />
       <TodoTask
         tasks={personalTasks}
         taskType={TaskType.personal}
         onDelete={handleDelete}
         onAdd={handleAdd}
         onComplete={handleComplete}
-      />
+      /> */}
       {/* <TodoTask
         tasks={familyTasks}
         taskType={TaskType.family}
