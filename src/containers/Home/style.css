@@ -1,0 +1,30 @@
+.profile-container {
+    display: flex;
+    margin: 25px 0px;
+    justify-content: space-between;
+    color: #404040;
+}
+.header-img {
+    height: 50px;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    color: #404040;
+}
+
+.card-icon {
+    font-size: 40px !important;
+    margin-right: 10px;
+    color: #e8bd00;
+}
+
+.gray {
+    color: gray;
+}
