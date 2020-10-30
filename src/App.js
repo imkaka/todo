@@ -5,7 +5,7 @@ import TodoTask from "./components/TodoTask";
 import TodoHeader from "./components/TodoHeader";
 
 import { TaskType } from "./constants/TodoConstants";
-import Home from './containers/Home';
+import Router from './Router';
 
 function App() {
   const [personalTasks, setPersonalTasks] = useState([
@@ -92,7 +92,7 @@ function App() {
       <div className="side-container">
         <div></div>
         <div className="main-screen">
-          <Home />
+          <Router />
         </div>
         <div></div>
       </div>

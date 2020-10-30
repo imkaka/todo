@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../App.css';
 
-const AppContainer = ({ children, gradient = 'linear-gradient(180deg, #36D1DC -9.85%, #5B86E5 69.33%)' }) => {
+const AppContainer = ({ children, height = 310 }) => {
     return (
-        <div className="app-screen" style={styles.container(gradient)}>
-            <div className="curve-container"></div>
+        <div className="app-screen" style={styles.container}>
+            <div className="curve-container" style={{ height }}></div>
             <div className="app-content">
                 {children}
             </div>
@@ -13,10 +13,8 @@ const AppContainer = ({ children, gradient = 'linear-gradient(180deg, #36D1DC -9
 }
 
 const styles = {
-    container: gradient => {
-        return {
-            backgroundColor: '#fff'       
-        }
+    container: {
+        backgroundColor: '#fff'
     }
 }
 export default AppContainer;
