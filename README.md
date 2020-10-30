@@ -4,11 +4,11 @@ A modern todo web application.
 
 # Page 1
 
-![App's UI](./src/assets/page-1.png)
+![App's UI](./src/assets/page-1.PNG)
 
 # Page 2
 
-![App's UI](./src/assets/page-2.png)
+![App's UI](./src/assets/page-2.PNG)
 
 
 ## Getting Started
