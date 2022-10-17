@@ -1,20 +1,21 @@
-## App's User Interface
+# Todo
 
 A modern todo web application. 
 
-# Page 1
+## Home Page
 
 ![App's UI](./src/assets/page-1.PNG)
 
-# Page 2
+## Tasks Page
 
 ![App's UI](./src/assets/page-2.PNG)
 
 
-## Getting Started
+## Getting Started (try it out) 
 
-1. `git clone https://github.com/imkaka/todo.git` 
-2. `npm install`.
-3. `npm run start`.
+1. `git clone https://github.com/imkaka/todo.git`
+2. `cd todo`
+3. `npm install`
+4. `npm run start`
 
 That's it, Happy Coding! :tada:
